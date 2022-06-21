@@ -5,7 +5,7 @@ on:
     tags:
       - v*
 env:
-  VERSION: ${{$(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ')}}
+  VERSION: $(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ')
 
 jobs:
 

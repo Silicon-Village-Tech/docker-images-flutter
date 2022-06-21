@@ -5,7 +5,7 @@ USER root
 
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
-    FLUTTER_VERSION=2.10.4
+    FLUTTER_VERSION=3.0.2
 ENV FLUTTER_ROOT=$FLUTTER_HOME
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
@@ -18,8 +18,8 @@ RUN yes | flutter doctor --android-licenses \
     && flutter doctor \
     && chown -R root:root ${FLUTTER_HOME}
 
-RUN curl -O https://github.com/google/bundletool/releases/download/1.7.0/bundletool-all-1.7.0.jar
-RUN mv bundletool-all-1.7.0.jar bundletool.jar
+RUN curl -O https://github.com/google/bundletool/releases/download/1.10.0/bundletool-all-1.10.0.jar
+RUN mv bundletool-all-1.10.0.jar bundletool.jar
 
 RUN apt-get update -qqy && apt-get install -qqy \
         curl \

@@ -36,9 +36,9 @@ RUN apt-get update -qqy && apt-get install -qqy \
 RUN pip3 install -U crcmod
 
 RUN curl -sL https://firebase.tools | bash
-RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-340.0.0-linux-x86_64.tar.gz
+RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-390.0.0-linux-x86_64.tar.gz
 
-RUN tar -xvf google-cloud-sdk-340.0.0-linux-x86_64.tar.gz -C /opt
+RUN tar -xvf google-cloud-cli-390.0.0-linux-x86_64.tar.gz -C /opt
 
 RUN /opt/google-cloud-sdk/install.sh --quiet
 

@@ -28,7 +28,7 @@ jobs:
     
     
     - name: Push Docker Image
-      run: docker push siliconvillage/flutter-firebase:${{env.VERSION}}
+      run: docker push siliconvillage/flutter-firebase:${env.VERSION}
 
     - name: Push Docker Image
       run: docker push siliconvillage/flutter-firebase:latest

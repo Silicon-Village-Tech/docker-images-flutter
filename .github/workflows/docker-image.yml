@@ -4,7 +4,8 @@ on:
   push:
     tags:
       - v*
-
+env:
+  VERSION: $(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ')
 
 jobs:
 
@@ -14,6 +15,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Show tag
+      run: echo "${{env.VERSION}}"
       
     - name: Log in to Docker Hub
       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
@@ -22,15 +26,12 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build the Docker image
-      run: |
-        VERSION=$(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ')
-        echo $VERSION 
-        # docker build --tag siliconvillage/flutter-firebase:latest --tag siliconvillage/flutter-firebase:${{VERSION}} sdk
+      run: docker build --tag siliconvillage/flutter-firebase:latest --tag siliconvillage/flutter-firebase:${{github.run_number}} sdk
+    
+    
     
     - name: Push Docker Image
-      run: |
-        VERSION=$(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ') 
-        docker push siliconvillage/flutter-firebase:${{VERSION}}
+      run: docker push siliconvillage/flutter-firebase:${{env.VERSION}}
 
     - name: Push Docker Image
       run: docker push siliconvillage/flutter-firebase:latest

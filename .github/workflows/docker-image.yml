@@ -22,11 +22,10 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build the Docker image
-      run: | 
-        VERSION=$(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ') 
-        docker build --tag siliconvillage/flutter-firebase:latest --tag siliconvillage/flutter-firebase:${{VERSION}} sdk
-    
-    
+      run: |
+        VERSION=$(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ')
+        echo $VERSION 
+        # docker build --tag siliconvillage/flutter-firebase:latest --tag siliconvillage/flutter-firebase:${{VERSION}} sdk
     
     - name: Push Docker Image
       run: |

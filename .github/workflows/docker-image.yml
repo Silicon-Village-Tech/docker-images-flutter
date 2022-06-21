@@ -26,7 +26,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build the Docker image
-      run: docker build --tag siliconvillage/flutter-firebase:latest --tag siliconvillage/flutter-firebase:${{github.run_number}} sdk
+      run: docker build --tag siliconvillage/flutter-firebase:latest --tag siliconvillage/flutter-firebase:"${{env.VERSION}}" sdk
     
     
     

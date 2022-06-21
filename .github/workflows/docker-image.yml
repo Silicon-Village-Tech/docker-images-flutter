@@ -5,7 +5,7 @@ on:
     tags:
       - v*
 env:
-  VERSION: $(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ')
+  VERSION: echo $(echo ${GITHUB_REF##*/} | tr -d ' ' | tr 'v' ' ')
 
 jobs:
 
@@ -23,12 +23,12 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build the Docker image
-      run: docker build --tag siliconvillage/flutter-firebase:latest --tag siliconvillage/flutter-firebase:${{${env.VERSION}}} sdk
+      run: docker build --tag siliconvillage/flutter-firebase:latest --tag siliconvillage/flutter-firebase:${{env.VERSION}} sdk
     
     
     
     - name: Push Docker Image
-      run: docker push siliconvillage/flutter-firebase:${{${env.VERSION}}}
+      run: docker push siliconvillage/flutter-firebase:${{env.VERSION}}
 
     - name: Push Docker Image
       run: docker push siliconvillage/flutter-firebase:latest

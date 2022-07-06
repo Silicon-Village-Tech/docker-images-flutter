@@ -6,7 +6,7 @@ COPY debug.keystore /root/.android/debug.keystore
 
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
-    FLUTTER_VERSION=stable
+    FLUTTER_VERSION=3.0.3
 ENV FLUTTER_ROOT=$FLUTTER_HOME
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
@@ -19,8 +19,8 @@ RUN yes | flutter doctor --android-licenses \
     && flutter doctor \
     && chown -R root:root ${FLUTTER_HOME}
 
-RUN curl -O https://github.com/google/bundletool/releases/download/1.7.0/bundletool-all-1.7.0.jar
-RUN mv bundletool-all-1.7.0.jar bundletool.jar
+RUN curl -O https://github.com/google/bundletool/releases/download/1.10.0/bundletool-all-1.10.0.jar
+RUN mv bundletool-all-1.10.0.jar bundletool.jar
 
 RUN apt-get update -qqy && apt-get install -qqy \
         curl \
@@ -37,9 +37,9 @@ RUN apt-get update -qqy && apt-get install -qqy \
 RUN pip3 install -U crcmod
 
 RUN curl -sL https://firebase.tools | bash
-RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-340.0.0-linux-x86_64.tar.gz
+RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-390.0.0-linux-x86_64.tar.gz
 
-RUN tar -xvf google-cloud-sdk-340.0.0-linux-x86_64.tar.gz -C /opt
+RUN tar -xvf google-cloud-cli-390.0.0-linux-x86_64.tar.gz -C /opt
 
 RUN /opt/google-cloud-sdk/install.sh --quiet
 

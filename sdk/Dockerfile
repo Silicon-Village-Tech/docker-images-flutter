@@ -6,7 +6,7 @@ COPY debug.keystore /root/.android/debug.keystore
 
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
-    FLUTTER_VERSION=3.0.4
+    FLUTTER_VERSION=3.0.5
 ENV FLUTTER_ROOT=$FLUTTER_HOME
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin

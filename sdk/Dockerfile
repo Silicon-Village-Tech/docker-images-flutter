@@ -8,6 +8,8 @@ RUN chmod +x /opt/gp/gp-uploader
 COPY gp-uploader.py /opt/gp/
 ENV PATH ${PATH}:/opt/gp/
 
+pip3 install google-api-python-client google-auth
+
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
     FLUTTER_VERSION=3.0.5
 ENV FLUTTER_ROOT=$FLUTTER_HOME

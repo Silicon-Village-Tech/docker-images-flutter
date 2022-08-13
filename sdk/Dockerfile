@@ -3,7 +3,10 @@ FROM cirrusci/android-sdk:30
 USER root
 
 COPY debug.keystore /root/.android/debug.keystore
-
+COPY gp-uploader /opt/gp/
+RUN chmod +x /opt/gp/gp-uploader
+COPY gp-uploader.py /opt/gp/
+ENV PATH ${PATH}:/opt/gp/
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
     FLUTTER_VERSION=3.0.5

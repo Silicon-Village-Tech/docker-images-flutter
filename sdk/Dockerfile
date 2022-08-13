@@ -8,7 +8,7 @@ RUN chmod +x /opt/gp/gp-uploader
 COPY gp-uploader.py /opt/gp/
 ENV PATH ${PATH}:/opt/gp/
 
-RUN pip3 install google-api-python-client google-auth
+
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
     FLUTTER_VERSION=3.0.5
@@ -39,7 +39,7 @@ RUN apt-get update -qqy && apt-get install -qqy \
         gnupg \
         openjdk-11-jdk \
         unzip
-RUN pip3 install -U crcmod
+RUN pip3 install -U crcmod google-api-python-client google-auth
 
 RUN curl -sL https://firebase.tools | bash
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-390.0.0-linux-x86_64.tar.gz

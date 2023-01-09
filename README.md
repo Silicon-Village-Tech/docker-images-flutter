@@ -1,4 +1,4 @@
-# Docker Images for [Flutter](https://flutter.dev/) 2.10.4
+# Docker Images for [Flutter](https://flutter.dev/) 3.3.10
 
 [![Docker Image CI](https://github.com/Silicon-Village-Tech/docker-images-flutter/actions/workflows/docker-image.yml/badge.svg)](https://github.com/Silicon-Village-Tech/docker-images-flutter/actions/workflows/docker-image.yml)
 

@@ -11,7 +11,7 @@ ENV PATH ${PATH}:/opt/gp/
 
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
-    FLUTTER_VERSION=3.3.10
+    FLUTTER_VERSION=3.7.12
 ENV FLUTTER_ROOT=$FLUTTER_HOME
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
@@ -24,7 +24,7 @@ RUN yes | flutter doctor --android-licenses \
     && flutter doctor \
     && chown -R root:root ${FLUTTER_HOME}
 
-RUN curl -O https://github.com/google/bundletool/releases/download/1.11.2/bundletool-all-1.11.2.jar
+RUN curl -O https://github.com/google/bundletool/releases/download/1.14.1/bundletool-all-1.14.1.jar
 RUN mv bundletool-all-1.11.2.jar bundletool.jar
 
 RUN apt-get update -qqy && apt-get install -qqy \
@@ -43,9 +43,9 @@ RUN pip3 install -U crcmod google-api-python-client google-auth
 
 RUN curl -sL https://firebase.tools | bash
 
-RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-404.0.0-linux-x86_64.tar.gz
+RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-427.0.0-linux-x86_64.tar.gz
 
-RUN tar -xvf google-cloud-cli-404.0.0-linux-x86_64.tar.gz -C /opt
+RUN tar -xvf google-cloud-cli-427.0.0-linux-x86_64.tar.gz -C /opt
 
 RUN /opt/google-cloud-sdk/install.sh --quiet
 

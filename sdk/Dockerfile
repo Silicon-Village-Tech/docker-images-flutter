@@ -25,7 +25,7 @@ RUN yes | flutter doctor --android-licenses \
     && chown -R root:root ${FLUTTER_HOME}
 
 RUN curl -O https://github.com/google/bundletool/releases/download/1.14.1/bundletool-all-1.14.1.jar
-RUN mv bundletool-all-1.11.2.jar bundletool.jar
+RUN mv bundletool-all-1.14.1.jar bundletool.jar
 
 RUN apt-get update -qqy && apt-get install -qqy \
         curl \

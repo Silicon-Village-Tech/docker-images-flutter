@@ -43,9 +43,9 @@ RUN pip3 install -U crcmod google-api-python-client google-auth
 
 RUN curl -sL https://firebase.tools | bash
 
-RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-427.0.0-linux-x86_64.tar.gz
+RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
 
-RUN tar -xvf google-cloud-cli-427.0.0-linux-x86_64.tar.gz -C /opt
+RUN tar -xvf google-cloud-cli-linux-x86_64.tar.gz -C /opt
 
 RUN /opt/google-cloud-sdk/install.sh --quiet
 

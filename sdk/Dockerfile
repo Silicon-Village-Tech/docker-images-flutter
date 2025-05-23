@@ -1,4 +1,4 @@
-FROM cirrusci/android-sdk:30
+FROM cirrusci/android-sdk:33
 # FROM node:slim
 USER root
 
@@ -11,7 +11,7 @@ ENV PATH ${PATH}:/opt/gp/
 
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
-    FLUTTER_VERSION=3.19.3
+    FLUTTER_VERSION=3.24.0
 ENV FLUTTER_ROOT=$FLUTTER_HOME
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin

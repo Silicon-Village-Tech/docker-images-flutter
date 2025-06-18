@@ -39,7 +39,7 @@ RUN apt-get update -qqy && apt-get install -qqy \
         gnupg \
         openjdk-11-jdk \
         unzip
-RUN pip3 install -U crcmod google-api-python-client google-auth
+RUN pip3 install --break-system-packages -U crcmod google-api-python-client google-auth
 
 RUN curl -sL https://firebase.tools | bash
 

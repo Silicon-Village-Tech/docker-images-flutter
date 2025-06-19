@@ -58,6 +58,14 @@ RUN unzip sonar-scanner-cli-4.7.0.2747-linux.zip -d /opt
 
 ENV PATH ${PATH}:/opt/sonar-scanner-cli-4.7.0.2747-linux/bin
 
+# Caminho absoluto do sdkmanager (ajuste se necessário)
+ENV ANDROID_SDK_ROOT=/opt/android-sdk
+ENV PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+
+# Aceita as licenças antes
+RUN yes | sdkmanager --licenses
+
+# Instala os componentes
 RUN yes | sdkmanager --install \
     "cmake" \
     "ndk;latest" \

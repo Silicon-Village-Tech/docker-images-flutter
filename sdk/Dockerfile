@@ -58,3 +58,10 @@ RUN unzip sonar-scanner-cli-4.7.0.2747-linux.zip -d /opt
 
 ENV PATH ${PATH}:/opt/sonar-scanner-cli-4.7.0.2747-linux/bin
 
+RUN yes | sdkmanager --install \
+    "cmake" \
+    "ndk;latest" \
+    "build-tools;latest" \
+    "platforms;android-34" \
+    "platforms;android-31"
+

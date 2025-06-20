@@ -67,7 +67,7 @@ RUN yes | sdkmanager --licenses
 
 # Instala os componentes
 RUN yes | sdkmanager --install \
-    "cmake" \
+    "cmake;3.22.1" \
     "ndk;latest" \
     "build-tools;latest" \
     "platforms;android-34" \

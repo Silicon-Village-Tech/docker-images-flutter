@@ -8,10 +8,10 @@ RUN chmod +x /opt/gp/gp-uploader
 COPY gp-uploader.py /opt/gp/
 ENV PATH ${PATH}:/opt/gp/
 
-
+ARG flutter_version
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
-    FLUTTER_VERSION=3.32.4
+    FLUTTER_VERSION=${flutter_version}
 ENV FLUTTER_ROOT=$FLUTTER_HOME
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
